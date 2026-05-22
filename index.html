@@ -1,0 +1,2369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><!-- v2 webp -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ground Up LC — Landscape &amp; Construction serving Sherman Oaks and the Greater LA area. Custom homes, landscape design, and property care. Call (747) 216-2177."/>
+  <title>Ground Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700;900&family=Playfair+Display:wght@400;700;900&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png"/>
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png"/>
+  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; overflow-x: hidden; background: #1E3A2A; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --forest: #1E3A2A;
+      --forest-mid: #2A4E38;
+      --cream: #F5EFE0;
+      --soil: #2C1A0E;
+      --stone: #8A7968;
+      --white: #FDFAF5;
+    }
+
+    /* ── LANDING ── */
+    #landing {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--forest);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      transition: opacity 1.2s ease, visibility 1.2s ease;
+    }
+    #landing { transition: opacity 2.2s ease; }
+    #landing.gone { opacity: 0; pointer-events: none; }
+
+    .i-tree { opacity: 0; animation: iFade 3.5s ease 0s forwards; margin-bottom: 0.5rem; }
+    .i-tree img { width: min(64px, 12vw); height: auto; display: block;
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.35)); margin: 0 auto 6px; }
+
+    .i-logo-block { width: min(620px, 80vw); display: flex;
+      flex-direction: column; align-items: center; margin-top: 16px; }
+
+    .i-rule-top { opacity: 0; animation: iFade 2s ease 5s forwards;
+      width: 64%; height: 1px; background: #B8995E; margin-bottom: 2px; }
+
+    .i-gu { opacity: 0; animation: iGrow 5s ease 2.75s forwards; width: 100%; }
+    .i-gu img { width: 100%; height: auto; display: block;
+      filter: drop-shadow(0 4px 24px rgba(0,0,0,0.4)); }
+
+    .i-sub { opacity: 0; animation: iFade 2s ease 5s forwards;
+      width: 100%; display: flex; flex-direction: column; align-items: center; }
+    .i-rule-bottom { width: 64%; height: 1px; background: #B8995E; margin-top: 2px; }
+    .i-sub img { width: 85%; height: auto; display: block; margin-top: 10px; }
+
+    @keyframes iGrow {
+      0%   { opacity: 0; transform: scale(0.6); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes iFade {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* ── MAIN SITE ── */
+    #site { opacity: 0; transition: opacity 2.5s ease; background: #1E3A2A; }
+    #site.visible { opacity: 1; }
+
+    /* ── NAV ── */
+
+    /* ── PARALLAX SECTIONS ── */
+    .parallax-bg {
+      position: fixed; inset: 0; z-index: 0;
+      background-size: cover; background-position: center;
+      background-attachment: fixed;
+    }
+
+    section {
+      position: relative; z-index: 10;
+      min-height: 100vh;
+    }
+
+    /* Hero */
+    #hero {
+      min-height: 100vh;
+      background-image: linear-gradient(rgba(10,18,10,0.04), rgba(10,18,10,0.04)),
+        url('images/e92b40426def.webp');
+      background-size: cover;
+      background-position: center 60%;
+      background-attachment: fixed;
+      display: flex; align-items: center; justify-content: center;
+      padding: 76px 2rem 4rem;
+    }
+    .hero-content {
+      text-align: center;
+    }
+    .hero-tagline {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400; font-style: normal;
+      color: var(--cream); line-height: 1.4;
+      margin-bottom: 2.8rem;
+      letter-spacing: 0.01em;
+    }
+    .hero-btns {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    }
+    .stat-label {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(245,239,224,0.5);
+      margin-top: 0.3rem;
+    }
+
+    /* ── SERVICES ── */
+    #services {
+      background: var(--forest);
+      padding: 8rem 5rem;
+    }
+    #services .section-h2 { color: #F5EFE0; }
+    #services > .reveal:first-of-type { text-align: center; }
+    #services .section-tag { justify-content: center; }
+    #services .section-sub { margin-left: auto; margin-right: auto; text-align: center; }
+    #services .section-sub { color: rgba(232,213,163,0.85); }
+    #services .service-icon-label { color: #F5EFE0; }
+    #services .service-icon-desc { color: rgba(232,213,163,0.80); }
+    #services .service-card { background: var(--forest-mid); border-left: 3px solid transparent; }
+    #services .service-card:hover { border-left-color: var(--gold); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+    #services .service-card-title { color: var(--gold-light); }
+    #services .service-card p { color: rgba(245,239,224,0.6); }
+    .section-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.8rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .section-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+    .section-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 900;
+      color: var(--soil); line-height: 1.12; margin-bottom: 1rem;
+    }
+    .section-sub {
+      font-size: 1rem; font-weight: 300; line-height: 1.7;
+      color: var(--stone); max-width: 520px; margin-bottom: 4rem;
+    }
+
+    /* Service icons row */
+    .services-icons {
+      display: flex; justify-content: center; align-items: flex-start;
+      gap: 7rem; margin-top: -2rem; margin-bottom: 5rem; flex-wrap: wrap;
+    }
+    .service-icon-block {
+      display: flex; flex-direction: column; align-items: center; gap: 1.2rem;
+      flex: 1; min-width: 180px; max-width: 270px;
+    }
+    .icon-wrap {
+      position: relative;
+      width: 210px; height: 210px;
+      flex-shrink: 0;
+      /* LOCKED — do not change height */
+    }
+    /* LOCKED — title and description positions must not change */
+    .service-icon-label { margin-top: 0 !important; }
+    .service-icon-desc  { margin-top: 0 !important; }
+    .icon-wrap img {
+      position: absolute; bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 160px; height: 160px;
+      object-fit: contain; object-position: bottom center;
+      filter: drop-shadow(0 4px 24px rgba(0,0,0,0.35));
+      transition: transform 0.4s ease;
+    }
+    .service-icon-block:hover .icon-wrap img { transform: translateX(-50%) scale(1.08); }
+      20%  { background-position: -40px 20px; }
+      40%  { background-position: 20px -40px; }
+      60%  { background-position: 40px 40px; }
+      80%  { background-position: -20px -20px; }
+      100% { background-position: 10px 30px; }
+    }
+    .service-icon-block:hover img { transform: scale(1.08); }
+    .service-icon-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 700; color: var(--soil);
+      text-align: center; line-height: 1.3;
+    }
+    .service-icon-desc {
+      font-size: 1rem; font-weight: 300; color: var(--stone);
+      text-align: justify; text-align-last: center; line-height: 1.65;
+      hyphens: auto;
+    }
+
+    /* Service cards grid */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    }
+    .service-card {
+      background: var(--white); padding: 2.4rem 2rem;
+      border-left: 3px solid transparent;
+      border-radius: 10px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+      border-left-color: var(--gold);
+      box-shadow: 0 8px 32px rgba(44,26,14,0.08);
+    }
+    .service-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 700; color: var(--soil); margin-bottom: 0.6rem;
+    }
+    .service-card p { font-size: 0.88rem; font-weight: 300; line-height: 1.7; color: var(--stone); }
+
+    /* ── PARALLAX DIVIDER ── */
+    .parallax-divider {
+      height: 60vh; min-height: 400px;
+      background-image: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)), url('images/20e9b701805d.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 2rem;
+    }
+    .parallax-divider h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 3.2rem); font-weight: 900;
+      color: var(--cream); line-height: 1.2; max-width: 700px;
+    }
+    .parallax-divider h2 em { font-style: italic; color: var(--gold); }
+
+    /* ── PROJECTS ── */
+    #projects {
+      background: var(--white);
+      padding: 8rem 5rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1rem; margin-top: 3rem;
+    }
+    .project-card {
+      position: relative; overflow: hidden; border-radius: 2px;
+      aspect-ratio: 4/3; cursor: pointer;
+    }
+    .project-card:first-child { grid-column: 1 / 3; aspect-ratio: unset; min-height: 360px; }
+    .project-bg {
+      width: 100%; height: 100%; position: absolute; inset: 0;
+      transition: transform 0.6s ease;
+    }
+    .project-card:hover .project-bg { transform: scale(1.06); }
+    .p1 { background: linear-gradient(135deg, #3D6B2A 0%, #2C4A1E 50%, #1A2E12 100%); }
+    .p2 { background: linear-gradient(145deg, #8A7968 0%, #5C3D1E 60%, #2C1A0E 100%); }
+    .p3 { background: linear-gradient(120deg, #4A6741 0%, #2C4A1E 70%, #1A2E12 100%); }
+    .p4 { background: linear-gradient(155deg, #C4873A 0%, #8A5A20 50%, #2C1A0E 100%); }
+    .p5 { background: linear-gradient(130deg, #7A9B6B 0%, #4A6741 50%, #2C4A1E 100%); }
+    .project-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(30,58,42,0.9) 0%, transparent 55%);
+      display: flex; align-items: flex-end; padding: 1.8rem;
+      opacity: 0; transition: opacity 0.4s;
+    }
+    .project-card:hover .project-overlay { opacity: 1; }
+    .project-cat {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.3rem;
+    }
+    .project-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--cream);
+    }
+
+    /* ── PARALLAX DIVIDER 2 ── */
+    .parallax-divider-2 {
+      height: auto; min-height: 80vh;
+      padding: 3.5in 0;
+      display: flex; align-items: center; justify-content: center;
+      background-image: linear-gradient(rgba(20,30,20,0.45), rgba(20,30,20,0.45)),
+        url('images/20e9b701805d.webp');
+      background-size: cover; background-position: center;
+      background-attachment: fixed;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 2rem;
+    }
+    .parallax-divider-2 .stat-row {
+      display: flex; gap: 5rem; flex-wrap: wrap; justify-content: center;
+    }
+    .parallax-divider-2 .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 900; color: var(--gold);
+    }
+    .parallax-divider-2 .stat-label {
+      font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(245,239,224,0.6); margin-top: 0.4rem;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--forest);
+      padding: 8rem 5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    #about::before {
+      content: '';
+      position: absolute; right: -10rem; top: -8rem;
+      width: 48rem; height: 48rem;
+      border: 1px solid rgba(201,168,76,0.07); border-radius: 50%;
+      pointer-events: none;
+    }
+    #about::after {
+      content: '';
+      position: absolute; right: -5rem; top: -2rem;
+      width: 36rem; height: 36rem;
+      border: 1px solid rgba(201,168,76,0.05); border-radius: 50%;
+      pointer-events: none;
+    }
+    #about .section-tag::before { background: var(--gold); }
+    #about .section-h2 { color: var(--cream); }
+    #about .section-sub { color: rgba(245,239,224,0.65); }
+    /* ── ABOUT: blueprint left ── */
+    .about-left { display: flex; flex-direction: column; }
+    .blueprint-wrap { width: 75%; margin: 0 auto; }
+    /* ── ABOUT: right content ── */
+    .about-right { }
+    .about-eyebrow {
+      font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.3rem;
+      display: flex; align-items: center; gap: 0.85rem;
+    }
+    .about-eyebrow::before {
+      content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--gold);
+    }
+    .about-list { display: flex; flex-direction: column; gap: 0; margin-top: 2.2rem; }
+    .about-item {
+      display: flex; gap: 1.6rem; align-items: flex-start;
+      padding: 1.35rem 0; border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .about-item:first-child { border-top: 1px solid rgba(201,168,76,0.1); }
+    .about-num {
+      font-family: 'Playfair Display', serif; font-size: 0.7rem; font-weight: 700;
+      color: rgba(201,168,76,0.45); letter-spacing: 0.06em;
+      padding-top: 0.2rem; min-width: 1.8rem; flex-shrink: 0;
+    }
+    .about-item-title {
+      font-family: 'Barlow', sans-serif; font-size: 0.93rem; font-weight: 600;
+      color: var(--gold-light); margin-bottom: 0.25rem;
+    }
+    .about-item-desc { font-size: 0.84rem; font-weight: 300; color: rgba(245,239,224,0.55); line-height: 1.65; }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--cream);
+      padding: 6rem 9rem 5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
+      min-height: unset;
+    }
+    #contact .section-h2 { color: var(--forest); }
+    #contact .section-sub { color: var(--forest-mid, #2d5a3e); }
+        .contact-detail { display: flex; align-items: center; gap: 1rem; font-size: 0.95rem; color: var(--forest); margin-bottom: 1rem; }
+    .contact-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-icon img {
+      width: 36px; height: 36px; object-fit: contain;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--forest);
+      padding-left: 1rem;
+    }
+    input, textarea, select {
+      font-family: 'Barlow', sans-serif; font-size: 0.92rem;
+      padding: 0.8rem 1rem; border: 1.5px solid rgba(44,26,14,0.15);
+      border-radius: 20px; background: var(--white); color: var(--soil);
+      outline: none; transition: border-color 0.2s;
+      -webkit-appearance: none; -moz-appearance: none; appearance: none;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--gold);
+    }
+    textarea { resize: vertical; min-height: 110px; }
+
+    /* Custom select arrow */
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c5a261' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+    .form-submit {
+      background: var(--forest); color: var(--cream);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.88rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; padding: 0.95rem 2.4rem;
+      border: none; border-radius: 50px; cursor: pointer;
+      align-self: flex-start; transition: background 0.2s;
+    }
+    .form-submit:hover { background: var(--gold); color: var(--forest); }
+    .form-success {
+      display: none; background: var(--forest); color: var(--cream);
+      padding: 1rem 1.4rem; border-radius: 8px; font-size: 0.9rem;
+    }
+
+
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--forest); padding: 2.5rem 5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 2rem;
+    }
+    .footer-brand {
+      display: flex; flex-direction: column; align-items: center; gap: 0;
+    }
+    .footer-tree-icon { width: 36px; height: auto; opacity: 0.85; margin-bottom: 6px; }
+    .footer-rule { width: 70%; height: 1px; background: rgba(184,153,94,0.6); margin: 3px 0; }
+    .footer-gu { width: 140px; height: auto; display: block; }
+    .footer-lc { width: 120px; height: auto; display: block; margin-top: 4px; }
+    .footer-center {
+      display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--gold); text-align: center; opacity: 0.7; }
+    .footer-links { display: none; }
+    .footer-links a {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 0.76rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      section { min-height: unset; }
+      #services, #projects, #about, #contact { padding: 3.5rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .services-icons { gap: 1.5rem; margin-bottom: 2rem; }
+      .service-icon-block { min-width: 120px; max-width: 200px; }
+      .icon-wrap { width: 150px; height: 150px; }
+      .icon-wrap img { width: 120px; height: 120px; }
+      .project-entry-row { flex-direction: column; }
+      .pe-photo.tall, .pe-photo.short { height: 250px; flex: 1 1 100%; }
+      #projects { padding: 3rem 1.5rem; }
+      #about { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 1.5rem; } .about-years-main { font-size: 6rem; } #about::before, #about::after { display: none; }
+      #contact { grid-template-columns: 1fr; gap: 2rem; min-height: unset; }
+      #contact a { color: inherit !important; text-decoration: none !important; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { padding: 2rem; flex-direction: column; text-align: center; }
+      /* Parallax doesn't work on iOS — fall back to scroll */
+      .parallax-bg, .parallax-divider, .parallax-divider-2, .parallax-divider-3 {
+        background-attachment: scroll;
+      }
+      /* Nav tighter on small screens (padding stays at 5rem to keep edge margins consistent) */
+      .nav-links { gap: 0.6rem; }
+      .nav-links a { font-size: 0.68rem; letter-spacing: 0.1em; }
+      .nav-logo img { width: 55px; }
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5rem 0 5rem;
+      background: #152c1f;
+      overflow: visible;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.6);
+    }
+    .nav-logo {
+      display: flex; align-items: center;
+      text-decoration: none;
+      margin-left: 0;
+    }
+    .nav-logo img {
+      width: 80px; height: auto;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+    }
+    .nav-links {
+      display: flex; gap: 1rem; list-style: none; align-items: center;
+    }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; text-decoration: none;
+      color: #F5EFE0;
+      background: none;
+      border: none;
+      padding: 0;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: #B8995E; }
+    .nav-links a.active { color: #C9A84C; }
+    .nav-cta {
+      color: #F5EFE0 !important;
+    }
+    .nav-cta:hover { color: #B8995E !important; }
+    section { scroll-margin-top: 56px; }
+    .parallax-strip { scroll-margin-top: 56px; }
+    .parallax-divider { scroll-margin-top: 56px; }
+
+    /* ── GRAIN FILM OVERLAY ── */
+    .grain-overlay {
+      position: fixed; inset: 0; z-index: 9998;
+      pointer-events: none;
+      opacity: 0.055;
+      will-change: transform;
+    }
+    @keyframes grainShift {
+      0%,100% { transform: translate(0,0); }
+      10%  { transform: translate(-2%,-3%); }
+      20%  { transform: translate(3%,1%); }
+      30%  { transform: translate(-1%,4%); }
+      40%  { transform: translate(4%,-2%); }
+      50%  { transform: translate(-3%,2%); }
+      60%  { transform: translate(2%,-4%); }
+      70%  { transform: translate(-4%,3%); }
+      80%  { transform: translate(3%,-1%); }
+      90%  { transform: translate(-2%,4%); }
+    }
+    .grain-overlay svg {
+      width: 200%; height: 200%;
+      position: absolute; top: -50%; left: -50%;
+      animation: grainShift 0.5s steps(1) infinite;
+    }
+
+    /* Scale tree and clover down to balance with house */
+    .services-icons .service-icon-block:nth-child(1) { margin-right: 3rem; }
+    .services-icons .service-icon-block:nth-child(3) { margin-left: 3rem; }
+    .services-icons .service-icon-block:nth-child(2) .icon-wrap img { transform: translateX(-50%) scale(0.72); transform-origin: bottom center; }
+    .services-icons .service-icon-block:nth-child(3) .icon-wrap img { transform: translateX(-50%) scale(0.68); transform-origin: bottom center; }
+    .services-icons .service-icon-block:nth-child(2):hover .icon-wrap img { transform: translateX(-50%) scale(0.78); }
+    .services-icons .service-icon-block:nth-child(3):hover .icon-wrap img { transform: translateX(-50%) scale(0.75); }
+  
+    /* ── PROJECTS REDESIGN ── */
+    #projects {
+      background: var(--cream);
+      padding: 8rem 5rem;
+    }
+    #projects .section-h2 {
+      font-family: 'EB Garamond', Georgia, serif;
+      color: var(--soil);
+      margin-bottom: 4rem;
+    }
+    .project-entry {
+      margin-bottom: 5rem;
+      border-top: 1px solid rgba(44,26,14,0.15);
+      padding-top: 1.8rem;
+    }
+    .project-entry-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .project-entry-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+    .project-entry-address {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--soil);
+      line-height: 1.2;
+    }
+    .project-entry-row {
+      display: flex;
+      gap: 0.5rem;
+      width: 100%;
+    }
+    .project-entry-row + .project-entry-row {
+      margin-top: 0.5rem;
+    }
+
+
+    .monument-full { flex: 1; width: 100%; overflow: hidden; }
+    .pe-photo.hero-solo {
+      flex: 1; width: 100%; height: 520px;
+      background-size: cover; background-position: center;
+    }
+    .pe-photo {
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .pe-photo.tall  { height: 480px; }
+    .pe-photo.short { height: 300px; }
+    .pe-photo.wide  { flex: 2; }
+    .pe-photo.narrow{ flex: 1; }
+    .pe-photo.equal { flex: 1; }
+
+  
+    /* ══════════════════ SUBPAGE SYSTEM ══════════════════ */
+    .subpage {
+      display: none;
+      min-height: 100vh;
+      background: var(--forest);
+      padding-top: 56px;
+    }
+    .subpage-nav {
+      display: none;
+    }
+    .subpage-back {
+      position: relative;
+      display: inline-block;
+      margin: 1.8rem 0 0 5rem;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.4rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.22s;
+      white-space: nowrap;
+      backdrop-filter: blur(8px);
+    }
+    .subpage-back:hover { background: var(--gold); color: var(--forest); border-color: var(--gold); }
+    .subpage-nav-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      color: rgba(245,239,224,0.55);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .subpage-hero {
+      padding: 4.5rem 5rem 3rem;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .subpage-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      color: var(--cream);
+      font-weight: 400;
+      margin: 0 0 0.5rem;
+      line-height: 1.1;
+    }
+    .subpage-hero p {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0;
+      opacity: 0.85;
+    }
+
+    /* ── Project gallery ── */
+    .subpage-gallery {
+      padding: 2.5rem 4rem 5rem;
+      columns: 2;
+      column-gap: 1.2rem;
+    }
+    .subpage-gallery img {
+      width: 100%;
+      display: block;
+      margin-bottom: 1.2rem;
+      break-inside: avoid;
+      transition: opacity 0.3s;
+    }
+
+    /* ── Bespoke gallery (strict row layout) — Albright, Monument ── */
+    .albright-gallery, .monument-gallery {
+      padding: 2.5rem 4rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+    .albright-gallery img, .monument-gallery img {
+      width: 100%;
+      display: block;
+      transition: opacity 0.3s;
+    }
+    .albright-gallery .alb-spacer, .monument-gallery .alb-spacer { visibility: hidden; }
+
+    /* ── Service subpage ── */
+    .subpage-services-grid {
+      padding: 3rem 5rem 5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.4rem;
+    }
+    .service-card {
+      background: rgba(245,239,224,0.05);
+      border: 1px solid rgba(201,168,76,0.22);
+      padding: 2rem 1.8rem;
+      border-radius: 10px;
+      transition: border-color 0.22s, background 0.22s;
+    }
+    .service-card:hover {
+      border-color: rgba(201,168,76,0.6);
+      background: rgba(245,239,224,0.08);
+    }
+    .service-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      color: var(--cream);
+      font-weight: 400;
+      margin: 0 0 0.7rem;
+    }
+    .service-card p {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.875rem;
+      color: rgba(245,239,224,0.65);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── View Project button ── */
+    .view-project-btn {
+      background: none;
+      border: 1px solid rgba(201,168,76,0.5);
+      color: var(--gold);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-left: 1rem;
+      vertical-align: middle;
+    }
+    .view-project-btn:hover { background: var(--gold); color: var(--forest); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .subpage-hero { padding: 3rem 2rem 2rem; }
+      .subpage-gallery { columns: 1; padding: 1.5rem; }
+      .subpage-services-grid { padding: 1.5rem 2rem; grid-template-columns: 1fr; }
+      .subpage-nav { padding: 0.8rem 1.2rem; }
+      .albright-gallery, .monument-gallery { grid-template-columns: 1fr; padding: 1.5rem; }
+      .albright-gallery .alb-spacer, .monument-gallery .alb-spacer { display: none; }
+    }
+
+    /* ══════════════════ SERVICES LOGO HEADER ══════════════════ */
+    .services-logo-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4.5rem 0 2rem;
+    }
+    /* Override all entry animations — show static, no motion */
+    .services-logo-header .i-logo-block {
+      margin-top: 0;
+      width: min(400px, 60vw);
+    }
+    .services-logo-header .i-tree,
+    .services-logo-header .i-rule-top,
+    .services-logo-header .i-gu,
+    .services-logo-header .i-sub {
+      opacity: 1 !important;
+      animation: none !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    /* Slightly reduce tree icon size in header context */
+    .services-logo-header .i-tree img {
+      width: min(52px, 9vw);
+    }
+    @media (max-width: 768px) {
+      .services-logo-header { padding: 3rem 0 1.5rem; }
+      .services-logo-header .i-logo-block { width: min(280px, 70vw); }
+    }
+
+    /* ══════════════════ NAV DROPDOWN ══════════════════ */
+    .nav-dropdown-wrap {
+      position: relative;
+    }
+    .nav-dropdown-trigger::after {
+      content: '';
+    }
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1E3A2A;
+      border: none;
+      list-style: none;
+      min-width: 170px;
+      padding: 0.8rem 0 0.5rem;
+      z-index: 2000;
+      box-shadow: none;
+    }
+    .nav-dropdown li a {
+      display: block;
+      padding: 0.55rem 1.4rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245,239,224,0.8) !important;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.18s, background 0.18s;
+    }
+    .nav-dropdown li a:hover {
+      color: var(--gold) !important;
+      background: rgba(201,168,76,0.07);
+    }
+    /* Small gold line under first item */
+    .nav-dropdown li:first-child {
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+    .nav-dropdown-wrap:hover .nav-dropdown,
+    .nav-dropdown-wrap:focus-within .nav-dropdown {
+      display: block;
+    }
+
+    /* ══════════════════ CONSTRUCTION PROJECTS PAGE ══════════════════ */
+    .cproj-category {
+      padding: 3rem 4rem 1rem 5rem;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+    .cproj-category:last-child { border-bottom: none; padding-bottom: 4rem; }
+    .cproj-category-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(0.8rem, 1.5vw, 1rem);
+      color: var(--cream);
+      font-weight: 400;
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.02em;
+      text-align: left;
+    }
+    .cproj-row {
+      display: flex;
+      gap: 1.4rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(201,168,76,0.3) transparent;
+    }
+    .cproj-row::-webkit-scrollbar { height: 4px; }
+    .cproj-row::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 2px; }
+    .cproj-card {
+      flex: 0 0 300px;
+      cursor: pointer;
+      transition: transform 0.22s;
+    }
+    .cproj-card:hover { transform: translateY(-4px); }
+    .cproj-photo {
+      width: 300px;
+      height: 210px;
+      background: rgba(245,239,224,0.06);
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .cproj-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.4s;
+    }
+    .cproj-card:hover .cproj-photo img { transform: scale(1.04); }
+    .cproj-card:hover .cproj-photo { background-size: 104%; }
+    .cproj-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(201,168,76,0.05);
+      border: 1px dashed rgba(201,168,76,0.2);
+    }
+    .cproj-placeholder span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: rgba(201,168,76,0.4);
+    }
+    .cproj-info {
+      padding: 0.9rem 0 0.2rem;
+    }
+    .cproj-street {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.95rem; color: var(--cream);
+      font-weight: 400; margin: 0 0 0.2rem;
+    }
+    .cproj-city {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(201,168,76,0.7);
+      margin: 0 0 0.6rem;
+    }
+    .cproj-view {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+      background: none; border: none; padding: 0; cursor: pointer;
+      opacity: 0.7; transition: opacity 0.2s;
+    }
+    .cproj-view:hover { opacity: 1; }
+    @media (max-width: 768px) {
+      .cproj-category { padding: 2rem 1.5rem 0.5rem; }
+      .cproj-card { flex: 0 0 240px; }
+      .cproj-photo { width: 240px; height: 170px; }
+    }
+
+    /* ══════════════════ ALBRIGHT DIVIDER ══════════════════ */
+    .parallax-divider-3 {
+      height: auto; min-height: 60vh;
+      background-image: linear-gradient(rgba(20,30,20,0.35), rgba(20,30,20,0.35)),
+        url('images/92e917d653e1.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* ══════════════════ SPLIT HERO ══════════════════ */
+    .split-hero {
+      display: flex;
+      align-items: stretch;
+      min-height: 380px;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      overflow: hidden;
+    }
+    .split-hero-left {
+      flex: 0 0 calc(50% - 5rem);
+      padding: 3.5rem 3rem 3.5rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: var(--forest);
+      position: relative;
+      z-index: 1;
+    }
+    .split-hero-left h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      color: var(--cream);
+      font-weight: 400;
+      margin: 0 0 0.5rem;
+      line-height: 1.1;
+    }
+    .split-hero-left p {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0;
+      opacity: 0.85;
+    }
+    .split-hero-right {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .split-hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #1E3A2A 0%, rgba(30,58,42,0.55) 38%, rgba(30,58,42,0.1) 65%, transparent 85%);
+    }
+    @media (max-width: 768px) {
+      .split-hero { flex-direction: column; min-height: auto; }
+      .split-hero-left { flex: none; padding: 2.5rem 1.5rem 2rem; }
+      .split-hero-right { height: 220px; flex: none; }
+    }
+    /* ══════════════════ MOBILE-ONLY OVERRIDES (≤768px) ══════════════════ */
+    @media (max-width: 768px) {
+      /* 0. Landing: visually center the logo by nudging it up
+            (compensates for the mobile browser URL bar making the visible area smaller) */
+      #landing { padding-bottom: 4rem; }
+
+      /* 1. Nav: tree logo flush-left, nav links anchored to the right */
+      nav { justify-content: flex-start !important; padding-left: 0.75rem !important; padding-right: 1rem !important; }
+      .nav-logo { margin-left: 0 !important; padding-left: 0 !important; }
+      .nav-logo img { margin-left: 0 !important; }
+      .nav-links { margin-left: auto !important; }
+
+      /* 2. Services row: remove side margins that pushed Estate Services off-center;
+            pull Estate Services up to close the gap when it wraps to its own row */
+      .services-icons .service-icon-block:nth-child(1),
+      .services-icons .service-icon-block:nth-child(3) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .services-icons .service-icon-block:nth-child(3) {
+        margin-top: -6rem !important;
+      }
+      .services-icons { gap: 2.5rem; }
+      /* Move the whole services/hero content up one space so Estate Services
+         and its description aren't clipped at the bottom on mobile */
+      #services { padding-top: 1.5rem !important; }
+
+      /* 3. Hide the second Albright parallax background (was blurry on mobile) */
+      .parallax-divider-3 { display: none; }
+
+      /* 4. (Footer nav links are now hidden globally — no mobile-specific rule needed.) */
+
+      /* 5. Back button: align with subpage content padding (2rem) */
+      .subpage-back { margin-left: 2rem; }
+
+      /* 6. Our Commitment: center heading + justify-and-center the description.
+            The list below keeps its existing layout. */
+      .about-right .section-h2 { text-align: center; }
+      .about-right .section-sub {
+        text-align: justify;
+        text-align-last: center;
+        margin-left: auto;
+        margin-right: auto;
+        hyphens: auto;
+      }
+    }
+</style>
+</head>
+<body>
+
+<!-- LANDING -->
+<div id="landing">
+    <div class="i-logo-block">
+    <div class="i-tree"><img src="images/8d468064a340.webp" alt="Tree"/></div>
+    <div class="i-rule-top"></div>
+    <div class="i-gu"><img src="images/bebfd62735a6.webp" alt="Ground Up"/></div>
+    <div class="i-sub">
+      <div class="i-rule-bottom"></div>
+      <img src="images/33288d5fab3c.webp" alt="Landscape &amp; Construction"/>
+    </div>
+  </div>
+  
+</div>
+
+<!-- MAIN SITE -->
+<nav>
+    <a href="#" class="nav-logo" onclick="closeSubpage('hero');return false;">
+      <img src="images/05e9084b2eb2.webp" alt="Ground Up"/ loading="lazy">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-dropdown-wrap">
+        <a href="#" class="nav-dropdown-trigger" onclick="return false;">Services &#9662;</a>
+        <ul class="nav-dropdown">
+          <li><a href="#" onclick="showSubpage('subpage-construction'); return false;">Construction</a></li>
+          <li><a href="#" onclick="showSubpage('subpage-landscape'); return false;">Landscape</a></li>
+          <li><a href="#" onclick="showSubpage('subpage-estate'); return false;">Estate Services</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown-wrap">
+        <a href="#" class="nav-dropdown-trigger" onclick="return false;">Projects ▾</a>
+        <ul class="nav-dropdown">
+          <li><a href="#" onclick="showSubpage('subpage-construction-projects'); return false;">Construction</a></li>
+          <li><a href="#" onclick="showSubpage('projects'); return false;">Landscape</a></li>
+          <li><a href="#" onclick="showSubpage('subpage-pool'); return false;">Pool &amp; Spa</a></li>
+          <li><a href="#" onclick="showSubpage('subpage-foundations'); return false;">Foundations</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="nav-cta" onclick="navGoTo('contact'); return false;">Contact</a></li>
+    </ul>
+  </nav>
+<div id="site">
+
+
+
+  <!-- HERO -->
+  
+
+  <!-- SERVICES -->
+  <section id="services" class="main-section">
+    <div id="services-logo-header" class="services-logo-header"></div>
+
+    <div class="services-icons reveal">
+      <div class="service-icon-block" onclick="showSubpage('subpage-construction')" style="cursor:pointer">
+        <div class="icon-wrap"><img src="images/a00418ad3a3e.webp" alt="Construction"/ loading="lazy"></div>
+        <div class="service-icon-label">Construction</div>
+        <div class="service-icon-desc">Design build for signature high end homes, multi-family developments, and ADUs with uncompromising attention to detail.</div>
+      </div>
+      <div class="service-icon-block" onclick="showSubpage('subpage-landscape')" style="cursor:pointer">
+        <div class="icon-wrap"><img src="images/8d468064a340.webp" alt="Landscape"/ loading="lazy"></div>
+        <div class="service-icon-label">Landscape</div>
+        <div class="service-icon-desc">A complete outdoor construction experience — conceived with sophistication, executed with precision, and finished to the highest standard of beauty.</div>
+      </div>
+      <div class="service-icon-block" onclick="showSubpage('subpage-estate')" style="cursor:pointer">
+        <div class="icon-wrap"><img src="images/2d3a75b18483.webp" alt="Maintenance"/ loading="lazy"></div>
+        <div class="service-icon-label">Estate Services</div>
+        <div class="service-icon-desc">Preserving the integrity of your investment through meticulous maintenance and expert site stewardship.</div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <div class="parallax-divider-2 main-section">
+    <div class="stat-row">
+      <div><div class="stat-num">33+</div><div class="stat-label">Years of Excellence</div></div>
+      <div><div class="stat-num">500+</div><div class="stat-label">Projects Completed</div></div>
+      <div><div class="stat-num">5.0★</div><div class="stat-label">Client Rating</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Licensed &amp; Insured</div></div>
+    </div>
+
+  <section id="projects" class="subpage">
+    <button class="subpage-back" onclick="closeSubpage('services')">← Back</button>
+    <div style="padding:3rem 4rem 1rem;">
+      <h2 class="section-h2" style="text-align:center;color:var(--cream);">Projects</h2>
+    </div>
+
+    <!-- Albright Residence -->
+    <div class="project-entry reveal" id="pe-albright">
+      <div class="project-entry-header">
+        
+        <span class="project-entry-address">Albright Residence. Pacific Palisades &mdash; New Construction &amp; Landscaping</span><button class="view-project-btn" onclick="showProjectSubpage('albright')">View Project →</button>
+      </div>
+      <div class="project-entry-row">
+        <div class="pe-photo hero-solo"   style="background-image:url('images/e81c4a72c224.webp');"></div>
+      </div>
+    </div>
+
+    <div id="albright-gallery-reserve" style="display:none">
+      <img src="images/92e917d653e1.webp" alt="Albright Residence" loading="lazy">
+      <img src="images/1f4cc5940722.webp" alt="Albright Residence" loading="lazy">
+      <img src="images/292770b20591.webp" alt="Albright Residence" loading="lazy">
+      <img src="images/7397b948fea9.webp" alt="Albright Residence" loading="lazy">
+      <img src="images/40b7e73ba6ab.webp" alt="Albright Residence" loading="lazy">
+      <img src="images/c05682c18319.webp" alt="Albright Residence" loading="lazy">
+      <img src="images/a84c9a725579.webp" alt="Albright Residence" loading="lazy">
+      <img src="images/4b06a651f475.webp" alt="Albright Residence" loading="lazy">
+      <img src="images/8f4bfb5c2000.webp" alt="Albright Residence" loading="lazy">
+      <img src="images/139b1c47230a.webp" alt="Albright Residence" loading="lazy">
+    </div>
+
+    <!-- Monument Residence -->
+    <div class="project-entry reveal" id="pe-monument">
+      <div class="project-entry-header">
+        
+        <span class="project-entry-address">Monument Residence. Pacific Palisades &mdash; New Construction &amp; Landscaping</span><button class="view-project-btn" onclick="showProjectSubpage('monument')">View Project →</button>
+      </div>
+      <div class="project-entry-row">
+        <div class="pe-photo monument-full">
+          <img src="images/04ef4f7299f0.webp" style="width:100%;height:auto;display:block;" alt="Monument Residence"/ loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Kagawa Residence -->
+    <div class="project-entry reveal" id="pe-kagawa">
+      <div class="project-entry-header">
+        <span class="project-entry-address">Kagawa Residence. Pacific Palisades &mdash; New Construction &amp; Landscaping</span><button class="view-project-btn" onclick="showProjectSubpage('kagawa')">View Project →</button>
+      </div>
+      <div class="project-entry-row" style="height:520px;">
+        <div class="pe-photo" style="flex:1;overflow:hidden;">
+          <img src="images/454e4626c19d.webp" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Kagawa Residence"/ loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div id="kagawa-gallery-reserve" style="display:none">
+    <img src="images/7a176e7d265f.webp" alt="Kagawa interior"/ loading="lazy">
+    <img src="images/3099e7f103f3.webp" alt="Kagawa interior"/ loading="lazy">
+    <img src="images/8c7b09bcf7f3.webp" alt="Kagawa interior"/ loading="lazy">
+    <img src="images/201727a32e0e.webp" alt="Kagawa interior"/ loading="lazy">
+    <img src="images/d62125de0b04.webp" alt="Kagawa interior"/ loading="lazy">
+  </div>
+    </div>
+
+  </section>
+
+
+
+  <!-- ABOUT -->
+  <section id="about" class="main-section">
+
+    <!-- Left: architectural blueprint -->
+    <div class="about-left reveal">
+      <div class="blueprint-wrap">
+        <svg viewBox="0 0 520 445" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+          <defs>
+            <pattern id="plan-grid" width="22" height="22" patternUnits="userSpaceOnUse">
+              <path d="M 22 0 L 0 0 0 22" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.5"/>
+            </pattern>
+            <radialGradient id="plan-glow" cx="50%" cy="48%" r="58%">
+              <stop offset="0%" stop-color="rgba(201,168,76,0.09)"/>
+              <stop offset="100%" stop-color="rgba(201,168,76,0)"/>
+            </radialGradient>
+
+          </defs>
+
+          <!-- Faint grid + center warmth -->
+          <rect width="520" height="430" fill="url(#plan-grid)"/>
+          <rect width="520" height="430" fill="url(#plan-glow)"/>
+
+          <g>
+
+          <g transform="translate(0, 110)">
+          <!-- ══ OUTER WALLS (drawn as segments to allow window gaps) ══ -->
+          <!-- Top wall — Bed 1 section -->
+          <line x1="55" y1="48" x2="72" y2="48" stroke="rgba(201,168,76,0.75)" stroke-width="2"/>
+          <line x1="148" y1="48" x2="185" y2="48" stroke="rgba(201,168,76,0.75)" stroke-width="2"/>
+          <!-- Top wall — Master section -->
+          <line x1="185" y1="48" x2="202" y2="48" stroke="rgba(201,168,76,0.75)" stroke-width="2"/>
+          <line x1="306" y1="48" x2="320" y2="48" stroke="rgba(201,168,76,0.75)" stroke-width="2"/>
+          <!-- Top wall — Bed 2 section -->
+          <line x1="320" y1="48" x2="337" y2="48" stroke="rgba(201,168,76,0.75)" stroke-width="2"/>
+          <line x1="408" y1="48" x2="425" y2="48" stroke="rgba(201,168,76,0.75)" stroke-width="2"/>
+          <!-- Right wall -->
+          <line x1="425" y1="48" x2="425" y2="190" stroke="rgba(201,168,76,0.75)" stroke-width="2"/>
+          <line x1="425" y1="242" x2="425" y2="308" stroke="rgba(201,168,76,0.75)" stroke-width="2"/>
+          <!-- Bottom wall -->
+          <line x1="55" y1="308" x2="425" y2="308" stroke="rgba(201,168,76,0.75)" stroke-width="2"/>
+          <!-- Left wall -->
+          <line x1="55" y1="48" x2="55" y2="308" stroke="rgba(201,168,76,0.75)" stroke-width="2"/>
+
+          <!-- ══ WINDOW SYMBOLS (double gold line across gap) ══ -->
+          <!-- Bed 1 window -->
+          <line x1="72" y1="44" x2="148" y2="44" stroke="rgba(201,168,76,0.55)" stroke-width="1"/>
+          <line x1="72" y1="52" x2="148" y2="52" stroke="rgba(201,168,76,0.55)" stroke-width="1"/>
+          <!-- Master window -->
+          <line x1="202" y1="44" x2="306" y2="44" stroke="rgba(201,168,76,0.55)" stroke-width="1"/>
+          <line x1="202" y1="52" x2="306" y2="52" stroke="rgba(201,168,76,0.55)" stroke-width="1"/>
+          <!-- Bed 2 window -->
+          <line x1="337" y1="44" x2="408" y2="44" stroke="rgba(201,168,76,0.55)" stroke-width="1"/>
+          <line x1="337" y1="52" x2="408" y2="52" stroke="rgba(201,168,76,0.55)" stroke-width="1"/>
+          <!-- Living room window (right wall) -->
+          <line x1="421" y1="190" x2="421" y2="242" stroke="rgba(201,168,76,0.55)" stroke-width="1"/>
+          <line x1="429" y1="190" x2="429" y2="242" stroke="rgba(201,168,76,0.55)" stroke-width="1"/>
+
+          <!-- ══ INTERIOR WALLS ══ -->
+          <line x1="55" y1="178" x2="425" y2="178" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+          <line x1="185" y1="48" x2="185" y2="178" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+          <line x1="320" y1="48" x2="320" y2="178" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+          <line x1="170" y1="178" x2="170" y2="308" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+          <line x1="240" y1="178" x2="240" y2="308" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+          <line x1="240" y1="250" x2="425" y2="250" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+
+          <!-- ══ DOOR SWINGS ══ -->
+          <line x1="163" y1="178" x2="163" y2="156" stroke="rgba(201,168,76,0.55)" stroke-width="1"/>
+          <path d="M 163 178 A 22 22 0 0 0 185 178" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <line x1="207" y1="178" x2="207" y2="156" stroke="rgba(201,168,76,0.55)" stroke-width="1"/>
+          <path d="M 207 178 A 22 22 0 0 1 185 178" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <line x1="342" y1="178" x2="342" y2="156" stroke="rgba(201,168,76,0.55)" stroke-width="1"/>
+          <path d="M 342 178 A 22 22 0 0 0 320 178" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <!-- Entry door (exterior bottom) -->
+          <line x1="196" y1="308" x2="170" y2="308" stroke="rgba(201,168,76,0.0)" stroke-width="1"/>
+          <path d="M 170 308 A 26 26 0 0 0 196 282" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <line x1="170" y1="282" x2="170" y2="308" stroke="rgba(201,168,76,0.55)" stroke-width="1"/>
+
+          <!-- ══ ROOM LABELS ══ -->
+          <text x="120" y="107" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(201,168,76,0.5)" letter-spacing="2">BEDROOM</text>
+          <text x="120" y="119" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(201,168,76,0.5)" letter-spacing="2">NO. 1</text>
+          <text x="252" y="107" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="rgba(201,168,76,0.58)" letter-spacing="2">MASTER</text>
+          <text x="252" y="120" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="rgba(201,168,76,0.58)" letter-spacing="2">SUITE</text>
+          <text x="372" y="107" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(201,168,76,0.5)" letter-spacing="2">BEDROOM</text>
+          <text x="372" y="119" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(201,168,76,0.5)" letter-spacing="2">NO. 2</text>
+          <text x="112" y="238" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(201,168,76,0.45)" letter-spacing="2">GARAGE</text>
+          <text x="205" y="238" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(201,168,76,0.42)" letter-spacing="1.5">ENTRY</text>
+          <text x="332" y="211" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="rgba(201,168,76,0.52)" letter-spacing="2">LIVING</text>
+          <text x="332" y="225" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="rgba(201,168,76,0.52)" letter-spacing="2">ROOM</text>
+          <text x="332" y="274" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(201,168,76,0.46)" letter-spacing="2">KITCHEN</text>
+          <text x="332" y="289" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(201,168,76,0.36)" letter-spacing="1.5">/ DINING</text>
+
+          <!-- ══ DIMENSION LINES ══ -->
+          <line x1="55" y1="34" x2="425" y2="34" stroke="rgba(201,168,76,0.3)" stroke-width="0.7"/>
+          <line x1="55" y1="28" x2="55" y2="40" stroke="rgba(201,168,76,0.3)" stroke-width="0.7"/>
+          <line x1="425" y1="28" x2="425" y2="40" stroke="rgba(201,168,76,0.3)" stroke-width="0.7"/>
+          <text x="240" y="30" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(201,168,76,0.45)" letter-spacing="0.5">74'-0"</text>
+          <line x1="440" y1="48" x2="440" y2="308" stroke="rgba(201,168,76,0.3)" stroke-width="0.7"/>
+          <line x1="434" y1="48" x2="446" y2="48" stroke="rgba(201,168,76,0.3)" stroke-width="0.7"/>
+          <line x1="434" y1="308" x2="446" y2="308" stroke="rgba(201,168,76,0.3)" stroke-width="0.7"/>
+          <g transform="translate(453,178) rotate(90)">
+            <text x="0" y="4" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(201,168,76,0.45)" letter-spacing="0.5">55'-0"</text>
+          </g>
+          <!-- Sub-dims -->
+          <line x1="55" y1="20" x2="185" y2="20" stroke="rgba(201,168,76,0.2)" stroke-width="0.6"/>
+          <line x1="55" y1="16" x2="55" y2="24" stroke="rgba(201,168,76,0.2)" stroke-width="0.6"/>
+          <line x1="185" y1="16" x2="185" y2="24" stroke="rgba(201,168,76,0.2)" stroke-width="0.6"/>
+          <text x="120" y="16" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" fill="rgba(201,168,76,0.32)">25'-0"</text>
+          <line x1="185" y1="20" x2="320" y2="20" stroke="rgba(201,168,76,0.2)" stroke-width="0.6"/>
+          <line x1="320" y1="16" x2="320" y2="24" stroke="rgba(201,168,76,0.2)" stroke-width="0.6"/>
+          <text x="252" y="16" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" fill="rgba(201,168,76,0.32)">26'-0"</text>
+          <line x1="320" y1="20" x2="425" y2="20" stroke="rgba(201,168,76,0.2)" stroke-width="0.6"/>
+          <text x="372" y="16" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" fill="rgba(201,168,76,0.32)">23'-0"</text>
+          </g>
+
+          <g transform="translate(0, -310)">
+          <!-- ══ FRONT ELEVATION (now above floor plan) ══ -->
+          <text x="240" y="330" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" fill="rgba(201,168,76,0.32)" letter-spacing="2">FRONT ELEVATION — 1/8" = 1'-0"</text>
+          <!-- Ground line -->
+          <line x1="60" y1="415" x2="420" y2="415" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+          <!-- Main walls -->
+          <rect x="90" y="368" width="300" height="47" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+          <!-- Gable roof -->
+          <polyline points="70,368 240,334 410,368" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.2"/>
+          <!-- Chimney -->
+          <rect x="290" y="340" width="14" height="28" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/>
+          <!-- Front door -->
+          <rect x="213" y="383" width="28" height="32" fill="none" stroke="rgba(201,168,76,0.35)" stroke-width="0.8"/>
+          <path d="M 213 383 A 14 14 0 0 1 241 383" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="0.7"/>
+          <!-- Windows front -->
+          <rect x="108" y="374" width="42" height="24" fill="none" stroke="rgba(201,168,76,0.32)" stroke-width="0.8"/>
+          <line x1="129" y1="374" x2="129" y2="398" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="162" y="374" width="38" height="24" fill="none" stroke="rgba(201,168,76,0.32)" stroke-width="0.8"/>
+          <rect x="340" y="374" width="42" height="24" fill="none" stroke="rgba(201,168,76,0.32)" stroke-width="0.8"/>
+          <line x1="361" y1="374" x2="361" y2="398" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+          <rect x="295" y="374" width="38" height="24" fill="none" stroke="rgba(201,168,76,0.32)" stroke-width="0.8"/>
+          </g>
+
+          <g transform="translate(0, 110)">
+          <!-- ══ NORTH ARROW ══ -->
+          <g transform="translate(476,76)">
+            <circle cx="0" cy="0" r="17" fill="none" stroke="rgba(201,168,76,0.32)" stroke-width="1"/>
+            <polygon points="0,-13 4,2 0,0 -4,2" fill="rgba(201,168,76,0.8)"/>
+            <polygon points="0,13 4,-2 0,0 -4,-2" fill="rgba(201,168,76,0.22)"/>
+            <text x="0" y="-19" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(201,168,76,0.75)" font-weight="700">N</text>
+          </g>
+
+          <!-- ══ TITLE BLOCK ══ -->
+          <line x1="55" y1="319" x2="425" y2="319" stroke="rgba(201,168,76,0.18)" stroke-width="0.6"/>
+          <rect x="55" y="319" width="370" height="9" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="0.5"/>
+          <text x="240" y="327" text-anchor="middle" font-family="Georgia,serif" font-size="6.5" fill="rgba(201,168,76,0.45)" letter-spacing="3">GROUND UP LC  ·  RESIDENTIAL DESIGN  ·  A-101</text>
+          </g>
+
+          </g><!-- end edge-fade mask -->
+        </svg>
+      </div>
+    </div>
+
+    <!-- Right: commitments -->
+    <div class="about-right reveal">
+      <h2 class="section-h2">Our Commitment</h2>
+      <p class="section-sub" style="color:rgba(245,239,224,0.65);">We combine old-world craftsmanship with modern project management so you always know what's happening and why.</p>
+      <div class="about-list">
+        <div class="about-item">
+          <div class="about-num">01</div>
+          <div><div class="about-item-title">Single Point of Contact</div><div class="about-item-desc">One dedicated project manager from first call to final walkthrough.</div></div>
+        </div>
+        <div class="about-item">
+          <div class="about-num">02</div>
+          <div><div class="about-item-title">Transparent Pricing</div><div class="about-item-desc">Detailed written estimates before work begins. No surprises.</div></div>
+        </div>
+        <div class="about-item">
+          <div class="about-num">03</div>
+          <div><div class="about-item-title">Quality Craftsmanship</div><div class="about-item-desc">Quality materials and proven techniques built to last decades.</div></div>
+        </div>
+        <div class="about-item">
+          <div class="about-num">04</div>
+          <div><div class="about-item-title">Licensed, Bonded &amp; Insured</div><div class="about-item-desc">Full coverage on every project — protecting you and our crew.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  
+  <div class="parallax-divider-3 main-section"></div>
+<section id="contact" class="main-section">
+    <div class="reveal">
+      
+      <h2 class="section-h2">Begin something<br>extraordinary.</h2>
+      <p class="section-sub">Tell us about your project, and lets build it together.</p>
+      <div class="contact-detail"><div class="contact-icon"><img src="images/a34a5b0be408.webp" alt="Phone" style="width:28px;height:28px;"/ loading="lazy"></div><span><a href="tel:+17472162177" style="color:inherit;text-decoration:none;">(747) 216-2177</a></span></div>
+      <div class="contact-detail"><div class="contact-icon"><img src="images/113cbaeaed21.webp" alt="Email"/ loading="lazy"></div><span><a href="mailto:info@grounduplc.com" style="color:inherit;text-decoration:none;">info@grounduplc.com</a></span></div>
+      <div class="contact-detail"><div class="contact-icon"><img src="images/f6d9168b33ea.webp" alt="Address"/ loading="lazy"></div><span><a href="https://maps.google.com/?q=15030+Ventura+Blvd+%23235,+Sherman+Oaks,+CA+91403" target="_blank" style="color:inherit;text-decoration:none;">15030 Ventura Blvd #235 . Sherman Oaks . CA 91403</a></span></div>
+      <div class="contact-detail"><div class="contact-icon"><img src="images/fcb32e14a0b9.webp" alt="License"/ loading="lazy"></div><span>License No. 1153836</span></div>
+    </div>
+    <div class="reveal">
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane" required/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith" required/></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Email</label><input type="email" placeholder="jane@email.com" required/></div>
+          <div class="form-group"><label>Phone</label><input type="tel" placeholder="(747) 216-2177"/></div>
+        </div>
+        <div class="form-group">
+          <label>Service Interested In</label>
+          <select>
+            <option value="">Select an experience…</option>
+            <option>New Home Construction</option>
+            <option>Remodel / Addition</option>
+            <option>Landscape</option>
+            <option>Hardscaping</option>
+            <option>Outdoor Living</option>
+            <option>Other / Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Tell Us About Your Project</label><textarea placeholder="Describe your project, timeline, or any questions…"></textarea></div>
+        <button type="submit" class="form-submit">Send Message →</button>
+        <div class="form-success" id="formSuccess">✓ Thanks! We'll be in touch within one business day.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <img src="images/8d468064a340.webp" class="footer-tree-icon" alt="tree"/ loading="lazy">
+      <div class="footer-rule"></div>
+      <img src="images/bebfd62735a6.webp" class="footer-gu" alt="Ground Up"/ loading="lazy">
+      <div class="footer-rule"></div>
+      <img src="images/33288d5fab3c.webp" class="footer-lc" alt="Landscape &amp; Construction"/ loading="lazy">
+    </div>
+    <div class="footer-center">
+      <ul class="footer-links">
+        <li class="nav-dropdown-wrap">
+        <a href="#services" class="nav-dropdown-trigger">Services &#9662;</a>
+        <ul class="nav-dropdown">
+          <li><a href="#" onclick="showSubpage('subpage-construction'); return false;">Construction</a></li>
+          <li><a href="#" onclick="showSubpage('subpage-landscape'); return false;">Landscape</a></li>
+          <li><a href="#" onclick="showSubpage('subpage-estate'); return false;">Estate Services</a></li>
+        </ul>
+      </li>
+        <li class="nav-dropdown-wrap">
+        <a href="#" class="nav-dropdown-trigger" onclick="showSubpage('projects'); return false;">Projects ▾</a>
+        <ul class="nav-dropdown">
+          <li><a href="#" onclick="showSubpage('subpage-construction-projects'); return false;">Construction</a></li>
+          <li><a href="#" onclick="showSubpage('projects'); return false;">Landscape</a></li>
+          <li><a href="#" onclick="showSubpage('subpage-pool'); return false;">Pool &amp; Spa</a></li>
+          <li><a href="#" onclick="showSubpage('subpage-foundations'); return false;">Foundations</a></li>
+        </ul>
+      </li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 Ground Up LC. All rights reserved. | grounduplc.com</div>
+    </div>
+  </footer>
+
+</div><!-- /site -->
+
+<script>
+  // Clone landing logo into services header (runs once at DOM ready)
+  (function cloneLogoIntoServices() {
+    function doClone() {
+      var src = document.querySelector('#landing .i-logo-block');
+      var tgt = document.getElementById('services-logo-header');
+      if (src && tgt && tgt.children.length === 0) {
+        var clone = src.cloneNode(true);
+        tgt.appendChild(clone);
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', doClone);
+    } else {
+      doClone();
+    }
+  })();
+
+  function enterSite() {
+    const site = document.getElementById('site');
+    site.classList.add('visible');
+    setTimeout(() => document.getElementById('landing').classList.add('gone'), 500);
+    setTimeout(() => { document.getElementById('landing').style.display = 'none'; }, 3500);
+  }
+
+  // Auto-enter after animation AND page fully loaded — whichever is later
+  var timerDone = false, pageDone = false;
+  function tryEnter() { if (timerDone && pageDone) enterSite(); }
+  setTimeout(function() { timerDone = true; tryEnter(); }, 8500);
+  window.addEventListener('load', function() { pageDone = true; tryEnter(); });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Form submit
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.form-submit');
+    btn.textContent = 'Sending…'; btn.disabled = true;
+    setTimeout(() => {
+      document.getElementById('formSuccess').style.display = 'block';
+      btn.style.display = 'none';
+    }, 900);
+  });
+
+// ═══════════════════════════════════════════════════════
+// SUBPAGE NAVIGATION
+// ═══════════════════════════════════════════════════════
+function showSubpage(id) {
+  // Hide every direct body child except nav and subpages
+  Array.from(document.body.children).forEach(function(el) {
+    if (el.tagName !== 'NAV' && !el.classList.contains('subpage') && el.tagName !== 'SCRIPT') {
+      el.dataset.spSavedDisplay = el.style.display;
+      el.style.display = 'none';
+    }
+  });
+  // Hide all subpages
+  document.querySelectorAll('.subpage').forEach(function(el) { el.style.display = 'none'; });
+  // Show target subpage
+  var sp = document.getElementById(id);
+  if (sp) { sp.style.display = 'block'; window.scrollTo(0, 0); }
+}
+
+function closeSubpage(returnSection) {
+  // Hide all subpages
+  document.querySelectorAll('.subpage').forEach(function(el) { el.style.display = 'none'; });
+  // Restore main content — only for elements showSubpage previously stashed a value on.
+  // Skips elements (like *-gallery-reserve) that had display:none inline and were never opened.
+  Array.from(document.body.children).forEach(function(el) {
+    if (el.tagName !== 'NAV' && !el.classList.contains('subpage') && el.tagName !== 'SCRIPT') {
+      if ('spSavedDisplay' in el.dataset) {
+        el.style.display = el.dataset.spSavedDisplay;
+      }
+    }
+  });
+  // Scroll to return section
+  if (returnSection) {
+    setTimeout(function() {
+      var el = document.getElementById(returnSection);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 60);
+  }
+}
+
+function showProjectSubpage(projectKey) {
+  showSubpage('subpage-' + projectKey);
+  buildProjectGallery(projectKey);
+}
+
+function buildProjectGallery(projectKey) {
+  var gallery = document.getElementById('gallery-' + projectKey);
+  if (!gallery || gallery.children.length > 0) return; // already built
+
+  var imgs = [];
+  var bgRe = /background-image\s*:\s*url\(['"]?([^'"\)]+)['"]?\)/;
+
+  function collect(root) {
+    if (!root) return;
+    root.querySelectorAll('.pe-photo').forEach(function(div) {
+      var style = div.getAttribute('style') || '';
+      var m = style.match(bgRe);
+      if (m) {
+        imgs.push(m[1]);
+      } else {
+        div.querySelectorAll('img').forEach(function(img) {
+          if (img.src) imgs.push(img.src);
+        });
+      }
+    });
+    // Also look for stand-alone <img> tags (e.g. inside hidden gallery-reserve divs)
+    root.querySelectorAll(':scope > img').forEach(function(img) {
+      if (img.src) imgs.push(img.src);
+    });
+  }
+
+  collect(document.getElementById('pe-' + projectKey));
+  collect(document.getElementById(projectKey + '-gallery-reserve'));
+
+  imgs.forEach(function(src, i) {
+    var img = document.createElement('img');
+    img.src = src;
+    img.alt = projectKey.charAt(0).toUpperCase() + projectKey.slice(1) + ' Residence — ' + (i + 1);
+    img.loading = 'lazy';
+    gallery.appendChild(img);
+  });
+}
+
+function backToProjects() {
+  document.querySelectorAll('.subpage').forEach(function(el) { el.style.display = 'none'; });
+  var sp = document.getElementById('subpage-construction-projects');
+  if (sp) { sp.style.display = 'block'; window.scrollTo(0, 0); }
+}
+
+// ═══ Populate construction project card photos ═══
+function populateConstructionPhotos() {
+  var map = {
+    'cproj-photo-monument': 'pe-monument',
+    'cproj-photo-kagawa':   'pe-kagawa',
+    'cproj-photo-blix':     'pe-blix',
+    'cproj-photo-huston':   'pe-huston',
+    'cproj-photo-riverside': 'pe-riverside',
+    'cproj-photo-klump':     'pe-klump',
+    'cproj-photo-greencraig': 'pe-greencraig',
+    'cproj-photo-found1':   'pe-found1'
+  };
+  for (var targetId in map) {
+    var target = document.getElementById(targetId);
+    if (!target) continue;
+    var entry  = document.getElementById(map[targetId]);
+    if (!entry) continue;
+
+    // Try <img> first
+    var img = entry.querySelector('.pe-photo img');
+    if (img && img.src) {
+      target.innerHTML = '';
+      var clone = document.createElement('img');
+      clone.src = img.src;
+      clone.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
+      target.appendChild(clone);
+      continue;
+    }
+    // Fallback: background-image on .pe-photo
+    var div = entry.querySelector('.pe-photo');
+    if (div && div.style.backgroundImage) {
+      target.innerHTML = '';
+      target.style.backgroundImage = div.style.backgroundImage;
+      target.style.backgroundSize = 'cover';
+      target.style.backgroundPosition = 'center';
+    }
+  }
+}
+
+// Run when construction projects subpage is opened
+var _origShowSubpage = showSubpage;
+showSubpage = function(id) {
+  _origShowSubpage(id);
+  if (id === 'subpage-construction-projects') {
+    populateConstructionPhotos();
+  }
+};
+
+// ═══ Nav navigation from any state (subpage or main) ═══
+function navGoTo(section) {
+  // Close any open subpage, restore main content
+  document.querySelectorAll('.subpage').forEach(function(el) { el.style.display = 'none'; });
+  Array.from(document.body.children).forEach(function(el) {
+    if (el.tagName !== 'NAV' && !el.classList.contains('subpage') && el.tagName !== 'SCRIPT') {
+      el.style.display = el.dataset.spSavedDisplay || '';
+    }
+  });
+  // Scroll to section
+  setTimeout(function() {
+    var el = document.getElementById(section);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }, 60);
+}
+</script>
+
+  <!-- ═══ SUBPAGE: CONSTRUCTION ═══ -->
+  <section id="subpage-construction" class="subpage">
+    <button class="subpage-back" onclick="closeSubpage('services')">← Back to Services</button>
+    <div class="split-hero">
+    <div class="split-hero-left">
+      <h1>Construction</h1>
+      <p>Design / Build — From the Ground Up.</p>
+    </div>
+    <div class="split-hero-right" style="background-image:url('images/6e7256b1c633.webp')"></div>
+  </div>
+    <div class="subpage-services-grid">
+      <div class="service-card">
+        <h3>Custom Home</h3>
+        <p>Full-service ground-up construction for high end, signature single-family residences — from architectural planning and permitting through every finish and final detail.</p>
+      </div>
+      <div class="service-card">
+        <h3>Multi-Family Development</h3>
+        <p>Design and construction of duplexes, triplexes, and boutique apartment buildings with an uncompromising emphasis on luxury, livability, and long-term value.</p>
+      </div>
+      <div class="service-card">
+        <h3>Foundation &amp; Site Preparation</h3>
+        <p>Expert earthwork, precision grading, and structural foundation systems engineered to create a safe, stable, and construction-ready site from the ground up.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ═══ SUBPAGE: LANDSCAPE ═══ -->
+  <section id="subpage-landscape" class="subpage">
+    <button class="subpage-back" onclick="closeSubpage('services')">← Back to Services</button>
+    <div class="split-hero">
+    <div class="split-hero-left">
+      <h1>Landscape</h1>
+      <p>Where Outdoor Living Becomes Art.</p>
+    </div>
+    <div class="split-hero-right" style="background-image:url('images/e81c4a72c224.webp')"></div>
+  </div>
+    <div class="subpage-services-grid">
+      <div class="service-card">
+        <h3>Landscaping</h3>
+        <p>Curated plant palettes — native, Mediterranean, and exotic — conceived with sophistication and executed to the highest standard of enduring beauty.</p>
+      </div>
+      <div class="service-card">
+        <h3>Hardscape</h3>
+        <p>Patios, driveways, walkways, and outdoor structures crafted in premium materials to complement your home's architecture and elevate every approach.</p>
+      </div>
+      <div class="service-card">
+        <h3>Pool &amp; Spa</h3>
+        <p>Bespoke pool and spa construction with premium finishes, integrated water features, and seamless design continuity from water's edge to the surrounding architecture.</p>
+      </div>
+      <div class="service-card">
+        <h3>Lighting</h3>
+        <p>Architectural landscape lighting that accentuates features, enhances security, and extends the pleasure of outdoor living long after the sun sets.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ═══ SUBPAGE: ESTATE SERVICES ═══ -->
+  <section id="subpage-estate" class="subpage">
+    <button class="subpage-back" onclick="closeSubpage('services')">← Back to Services</button>
+    <div class="split-hero">
+    <div class="split-hero-left">
+      <h1>Estate Services</h1>
+      <p>Exceptional Property Care, Delivered Without Compromise.</p>
+    </div>
+    <div class="split-hero-right" style="background-image:url('images/882e6eea7cf0.webp')"></div>
+  </div>
+    <div class="subpage-services-grid">
+      <div class="service-card">
+        <h3>Home Landscape Maintenance</h3>
+        <p>Meticulous year-round care for residential properties — pruning, seasonal plantings, edging, and ongoing upkeep tailored to the character of your home and grounds.</p>
+      </div>
+      <div class="service-card">
+        <h3>Estate / HOA</h3>
+        <p>White-glove property care for expansive estates and homeowner associations, delivering consistent, immaculate presentation through dedicated crews and a rigorous standard of stewardship.</p>
+      </div>
+      <div class="service-card">
+        <h3>Tree Trimming &amp; Removal</h3>
+        <p>Expert structural pruning, shaping, and canopy management by trained arborists — preserving the health, form, and long-term vitality of your trees.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ═══ SUBPAGE: ALBRIGHT RESIDENCE ═══ -->
+  <section id="subpage-albright" class="subpage">
+    <button class="subpage-back" onclick="backToProjects()">← Back to Projects</button>
+    <div class="subpage-hero">
+      <h1>Albright Residence</h1>
+      <p>Pacific Palisades &mdash; New Construction &amp; Landscaping</p>
+    </div>
+    <div id="gallery-albright" class="albright-gallery">
+      <img src="images/e81c4a72c224.webp" alt="Albright Residence — exterior" loading="lazy">
+      <img src="images/92e917d653e1.webp" alt="Albright Residence — exterior" loading="lazy">
+      <img src="images/7397b948fea9.webp" alt="Albright Residence — front entry" loading="lazy">
+      <img src="images/c05682c18319.webp" alt="Albright Residence — living room" loading="lazy">
+      <img src="images/40b7e73ba6ab.webp" alt="Albright Residence — entry" loading="lazy">
+      <div class="alb-spacer"></div>
+      <img src="images/1f4cc5940722.webp" alt="Albright Residence — great room" loading="lazy">
+      <img src="images/292770b20591.webp" alt="Albright Residence — kitchen" loading="lazy">
+      <img src="images/4b06a651f475.webp" alt="Albright Residence — master bedroom" loading="lazy">
+      <img src="images/8f4bfb5c2000.webp" alt="Albright Residence — master bath" loading="lazy">
+      <img src="images/139b1c47230a.webp" alt="Albright Residence — master closet" loading="lazy">
+      <img src="images/a84c9a725579.webp" alt="Albright Residence — theater" loading="lazy">
+    </div>
+  </section>
+  <!-- ═══ SUBPAGE: MONUMENT RESIDENCE ═══ -->
+  <section id="subpage-monument" class="subpage">
+    <button class="subpage-back" onclick="backToProjects()">← Back to Projects</button>
+    <div class="subpage-hero">
+      <h1>Monument Residence</h1>
+      <p>Pacific Palisades &mdash; New Construction &amp; Landscaping</p>
+    </div>
+    <div id="gallery-monument" class="monument-gallery">
+      <!-- Line 1: front exterior / front exterior -->
+      <img src="images/04ef4f7299f0.webp" alt="Monument Residence — front exterior" loading="lazy">
+      <img src="images/20e9b701805d.webp" alt="Monument Residence — front exterior" loading="lazy">
+      <!-- Line 2: back exterior / pool -->
+      <img src="images/89531a595673.webp" alt="Monument Residence — back exterior" loading="lazy">
+      <img src="images/239c48ddaed7.webp" alt="Monument Residence — pool" loading="lazy">
+      <!-- Line 3: front door hallway / living room -->
+      <img src="images/ddb2b83c14f8.webp" alt="Monument Residence — entry hallway" loading="lazy">
+      <img src="images/e4d0d8ef93a5.webp" alt="Monument Residence — living room" loading="lazy">
+      <!-- Line 4: dining room / kitchen -->
+      <img src="images/7d2d4d04a80e.webp" alt="Monument Residence — dining room" loading="lazy">
+      <img src="images/e5bf3655ac45.webp" alt="Monument Residence — kitchen" loading="lazy">
+      <!-- Line 5: balcony / powder room -->
+      <img src="images/5790118df688.webp" alt="Monument Residence — balcony" loading="lazy">
+      <img src="images/20fe7c289410.webp" alt="Monument Residence — powder room" loading="lazy">
+      <!-- Line 6: master bathroom / bathtub -->
+      <img src="images/959a9a4194fa.webp" alt="Monument Residence — master bathroom" loading="lazy">
+      <img src="images/8fa588f5237b.webp" alt="Monument Residence — bathtub" loading="lazy">
+      <!-- Line 7: pool table / stairs -->
+      <img src="images/8516f046d1cc.webp" alt="Monument Residence — pool table" loading="lazy">
+      <img src="images/11d68d703e63.webp" alt="Monument Residence — stairs" loading="lazy">
+    </div>
+  </section>
+  <!-- ═══ SUBPAGE: KAGAWA RESIDENCE ═══ -->
+  <section id="subpage-kagawa" class="subpage">
+    <button class="subpage-back" onclick="backToProjects()">← Back to Projects</button>
+    <div class="subpage-hero">
+      <h1>Kagawa Residence</h1>
+      <p>Pacific Palisades &mdash; New Construction &amp; Landscaping</p>
+    </div>
+    <div id="gallery-kagawa" class="subpage-gallery"></div>
+  </section>
+
+
+
+
+  <div id="pe-blix" style="display:none">
+      <div class="pe-photo"><img src="images/b7bb523032c9.webp" alt="10806 Blix Street — dusk_facade" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/fee93090e366.webp" alt="10806 Blix Street — entry_walk" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/fd76c1b17e53.webp" alt="10806 Blix Street — entry_close" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/a579d59f50cd.webp" alt="10806 Blix Street — rooftop_chairs" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/4a4fbb77ecda.webp" alt="10806 Blix Street — rooftop_wide" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/c224e7952c94.webp" alt="10806 Blix Street — rooftop_bench" / loading="lazy"></div>
+  </div>
+
+  <!-- ═══ SUBPAGE: BLIX MULTI-FAMILY ═══ -->
+  <section id="subpage-blix" class="subpage">
+    <button class="subpage-back" onclick="backToProjects()">← Back to Projects</button>
+    <div class="subpage-hero">
+      <h1>10806 Blix Street</h1>
+      <p>Toluca Lake &mdash; Multi-Family Development</p>
+    </div>
+    <div id="gallery-blix" class="subpage-gallery"></div>
+  </section>
+
+
+  <div id="pe-huston" style="display:none">
+      <div class="pe-photo"><img src="images/3f43a0bc4233.webp" alt="11155 Huston Street — dusk_facade" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/3ca6f2bd37cc.webp" alt="11155 Huston Street — entry" / loading="lazy"></div>
+  </div>
+
+  <!-- ═══ SUBPAGE: HUSTON MULTI-FAMILY ═══ -->
+  <section id="subpage-huston" class="subpage">
+    <button class="subpage-back" onclick="backToProjects()">← Back to Projects</button>
+    <div class="subpage-hero">
+      <h1>11155 Huston Street</h1>
+      <p>North Hollywood &mdash; Multi-Family Development</p>
+    </div>
+    <div id="gallery-huston" class="subpage-gallery"></div>
+  </section>
+
+
+  <div id="pe-riverside" style="display:none">
+      <div class="pe-photo"><img src="images/0a0f4f86f8a9.webp" alt="13136 Riverside Drive — street_view" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/b90aee06ad88.webp" alt="13136 Riverside Drive — facade" / loading="lazy"></div>
+  </div>
+
+  <!-- ═══ SUBPAGE: RIVERSIDE MULTI-FAMILY ═══ -->
+  <section id="subpage-riverside" class="subpage">
+    <button class="subpage-back" onclick="backToProjects()">← Back to Projects</button>
+    <div class="subpage-hero">
+      <h1>13136 Riverside Drive</h1>
+      <p>Sherman Oaks &mdash; Multi-Family Development</p>
+    </div>
+    <div id="gallery-riverside" class="subpage-gallery"></div>
+  </section>
+
+
+  <div id="pe-klump" style="display:none">
+      <div class="pe-photo"><img src="images/294314d57b13.webp" alt="5115 Klump — street view sunset" / loading="lazy"></div>
+  
+      <div class="pe-photo"><img src="images/2b09c82aa7ec.webp" alt="5115 Klump Street — aerial sunset" / loading="lazy"></div>
+  </div>
+
+  <!-- ═══ SUBPAGE: KLUMP
+
+  <!-- ═══ SUBPAGE: KLUMP MULTI-FAMILY ═══ -->
+  <section id="subpage-klump" class="subpage">
+    <button class="subpage-back" onclick="backToProjects()">← Back to Projects</button>
+    <div class="subpage-hero">
+      <h1>5115 Klump Avenue</h1>
+      <p>North Hollywood &mdash; Multi-Family Development</p>
+    </div>
+    <div id="gallery-klump" class="subpage-gallery"></div>
+  </section>
+
+
+
+
+
+
+
+  <div id="pe-found1" style="display:none">
+      <div class="pe-photo"><img src="images/0531559235b2.webp" alt="Foundation 1" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/e7172905b93d.webp" alt="Foundation 2" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/5373755d15e0.webp" alt="Foundation 3" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/759982936d8b.webp" alt="Foundation 4" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/eb6507b4bd73.webp" alt="Foundation 5" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/120e3bc36c9b.webp" alt="Foundation 6" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/10388bc3a61d.webp" alt="Foundation 7" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/e439c9783592.webp" alt="Foundation 8" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/ed7e1c214540.webp" alt="Foundation 9" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/69817a3fa68e.webp" alt="Foundation 10" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/e1af3ef285c6.webp" alt="Foundation 11" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/2da641a69ed4.webp" alt="Foundation 12" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/d7355f46f9f7.webp" alt="Foundation 13" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/7c5a4286a278.webp" alt="Foundation 14" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/9ff94ec27203.webp" alt="Foundation 15" / loading="lazy"></div>
+      <div class="pe-photo"><img src="images/0531559235b2.webp" alt="Foundation 16" / loading="lazy"></div>
+  </div>
+
+  <!-- ═══ SUBPAGE: FOUNDATIONS ═══ -->
+  <section id="subpage-foundations" class="subpage">
+    <button class="subpage-back" onclick="closeSubpage('contact')">← Back</button>
+    <div class="subpage-hero">
+      <h1>Foundations</h1>
+      <p>Site Preparation &amp; Foundation Work</p>
+    </div>
+    <div class="cproj-category" style="padding-top:2rem;">
+      <h2 class="cproj-category-title" style="padding: 0 2rem 1rem 0; font-size: 0.95rem; margin-bottom: 0.7rem;">11155 Huston Street &mdash; North Hollywood</h2>
+      <div class="cproj-row">
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/0531559235b2.webp" alt="Foundation work 1" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/e7172905b93d.webp" alt="Foundation work 2" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/5373755d15e0.webp" alt="Foundation work 3" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/759982936d8b.webp" alt="Foundation work 4" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/eb6507b4bd73.webp" alt="Foundation work 5" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/120e3bc36c9b.webp" alt="Foundation work 6" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/10388bc3a61d.webp" alt="Foundation work 7" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/e439c9783592.webp" alt="Foundation work 8" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/ed7e1c214540.webp" alt="Foundation work 9" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/69817a3fa68e.webp" alt="Foundation work 10" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/e1af3ef285c6.webp" alt="Foundation work 11" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/2da641a69ed4.webp" alt="Foundation work 12" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/d7355f46f9f7.webp" alt="Foundation work 13" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/7c5a4286a278.webp" alt="Foundation work 14" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/9ff94ec27203.webp" alt="Foundation work 15" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/0531559235b2.webp" alt="Foundation work 16" / loading="lazy">
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="cproj-category" style="padding-top:2rem;">
+      <h2 class="cproj-category-title" style="padding: 0 2rem 1rem 0; font-size: 0.95rem; margin-bottom: 0.7rem;">200 North Gunston Drive &mdash; Brentwood</h2>
+      <div class="cproj-row">
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/7755f83739dd.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/7244ea3d291c.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/30c8e6d753d9.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/dfad18e89704.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/aef1e444a05c.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/55d9c5cec071.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/9d687174ea38.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/d89a3a56f62c.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/a0d2a5c72329.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/aa819383c036.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/907839853934.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/c1d617f86799.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/b4e2de4baa30.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/7fcdc61c6201.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/6b6a89886cd0.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card">
+        <div class="cproj-photo" style="cursor:default;">
+          <img src="images/2f0269732e97.webp" alt="200 North Gunston Street" / loading="lazy">
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+    <div class="cproj-category" style="padding-top:2rem;">
+      <h2 class="cproj-category-title" style="padding: 0 2rem 1rem 0; font-size: 0.95rem; margin-bottom: 0.7rem;">10806 Blix Street &mdash; Toluca Lake</h2>
+      <div class="cproj-row">
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/732d1fbcc1df.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/7b9a9e8b9ea4.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/7a797e3c4d92.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/a77a2646b927.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/41ef35f9d079.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/363be4244ef2.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/131ca18dc4a4.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/160d9efe2029.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/bd3089d15d12.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/c055b72c79cd.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/4efda754daef.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/469bb154ce67.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/a58636927c8e.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/93c2a4c53566.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/51c2489defb0.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/23419d440e95.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      <div class="cproj-card" style="cursor:default;">
+        <div class="cproj-photo">
+          <img src="images/4d34c8e0bf93.webp" alt="10806 Blix Street" style="width:100%;height:100%;object-fit:cover;" / loading="lazy">
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ═══ SUBPAGE: POOL & SPA ═══ -->
+  <section id="subpage-pool" class="subpage">
+    <button class="subpage-back" onclick="closeSubpage('contact')">← Back</button>
+    <div class="subpage-hero">
+      <h1>Pool &amp; Spa</h1>
+      <p>Custom Pool &amp; Spa Construction</p>
+    </div>
+    <div class="cproj-category" style="padding-top:2rem;">
+      <div class="cproj-row">
+        <div class="cproj-card">
+          <div class="cproj-photo">
+            <div class="cproj-placeholder"><span>Photos Coming Soon</span></div>
+          </div>
+          <div class="cproj-info">
+            <p class="cproj-street">Portfolio Available Upon Request</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ SUBPAGE: CONSTRUCTION PROJECTS ═══ -->
+<div id="pe-greencraig" style="display:none">
+  <div class="pe-photo"><img src="images/b6dec268ed13.webp" alt="562 Greencraig Road photo 1" / loading="lazy"></div>
+  <div class="pe-photo"><img src="images/757640e88498.webp" alt="562 Greencraig Road photo 2" / loading="lazy"></div>
+  <div class="pe-photo"><img src="images/f0b2ab61c8e5.webp" alt="562 Greencraig Road photo 3" / loading="lazy"></div>
+  <div class="pe-photo"><img src="images/a7f3f7167b51.webp" alt="562 Greencraig Road photo 4" / loading="lazy"></div>
+  <div class="pe-photo"><img src="images/bbfa67519308.webp" alt="562 Greencraig Road photo 5" / loading="lazy"></div>
+  <div class="pe-photo"><img src="images/5236635b0466.webp" alt="562 Greencraig Road photo 6" / loading="lazy"></div>
+  <div class="pe-photo"><img src="images/5a44405d0a42.webp" alt="562 Greencraig Road photo 7" / loading="lazy"></div>
+  <div class="pe-photo"><img src="images/4415c9d16846.webp" alt="562 Greencraig Road photo 8" / loading="lazy"></div>
+  <div class="pe-photo"><img src="images/29ebe0b98945.webp" alt="562 Greencraig Road photo 9" / loading="lazy"></div>
+  <div class="pe-photo"><img src="images/bac6a78f6651.webp" alt="562 Greencraig Road photo 10" / loading="lazy"></div>
+  <div class="pe-photo"><img src="images/87eee9ab1b18.webp" alt="562 Greencraig Road photo 11" / loading="lazy"></div>
+</div>
+
+  <section id="subpage-greencraig" class="subpage">
+    <button class="subpage-back" onclick="backToProjects()">← Back to Projects</button>
+    <div class="subpage-hero"><h1>562 Greencraig Road</h1><p>Brentwood — Single Family Home</p></div>
+    <div id="gallery-greencraig" class="subpage-gallery"></div>
+  </section>
+
+  <section id="subpage-kraft" class="subpage">
+    <button class="subpage-back" onclick="backToProjects()">← Back to Projects</button>
+    <div class="subpage-hero"><h1>4201 Kraft Avenue</h1><p>Colfax Meadows &mdash; Single Family Home</p></div>
+    <div id="gallery-kraft" class="subpage-gallery">
+      <img src="images/a5f78aa8898b.webp" alt="4201 Kraft Avenue" loading="lazy">
+      <img src="images/79e586ff300b.webp" alt="4201 Kraft Avenue" loading="lazy">
+      <img src="images/f033d20fa71b.webp" alt="4201 Kraft Avenue" loading="lazy">
+      <img src="images/f87a1786531d.webp" alt="4201 Kraft Avenue" loading="lazy">
+      <img src="images/876fe5685903.webp" alt="4201 Kraft Avenue" loading="lazy">
+      <img src="images/dcf6ff777ed4.webp" alt="4201 Kraft Avenue" loading="lazy">
+      <img src="images/ddaedd4c786b.webp" alt="4201 Kraft Avenue" loading="lazy">
+      <img src="images/cf9ffe52f8b2.webp" alt="4201 Kraft Avenue" loading="lazy">
+      <img src="images/b64023d024dc.webp" alt="4201 Kraft Avenue" loading="lazy">
+      <img src="images/db599d1ab8c9.webp" alt="4201 Kraft Avenue" loading="lazy">
+      <img src="images/f40cb847733c.webp" alt="4201 Kraft Avenue" loading="lazy">
+      <img src="images/5d26ed10c3c5.webp" alt="4201 Kraft Avenue" loading="lazy">
+    </div>
+  </section>
+
+  <section id="subpage-livorno" class="subpage">
+    <button class="subpage-back" onclick="backToProjects()">← Back to Projects</button>
+    <div class="subpage-hero"><h1>16861 Livorno Drive</h1><p>Pacific Palisades &mdash; Single Family Home</p></div>
+    <div id="gallery-livorno" class="subpage-gallery">
+      <img src="images/3b9e4a13b89c.webp" alt="16861 Livorno Drive" loading="lazy">
+      <img src="images/477376050367.webp" alt="16861 Livorno Drive" loading="lazy">
+      <img src="images/a9c42c44f61b.webp" alt="16861 Livorno Drive" loading="lazy">
+      <img src="images/71687c19983e.webp" alt="16861 Livorno Drive" loading="lazy">
+      <img src="images/09a07a360ab3.webp" alt="16861 Livorno Drive" loading="lazy">
+      <img src="images/b5d50b54c9ef.webp" alt="16861 Livorno Drive" loading="lazy">
+      <img src="images/e07cefcbe587.webp" alt="16861 Livorno Drive" loading="lazy">
+    </div>
+  </section>
+
+  <section id="subpage-construction-projects" class="subpage">
+    <button class="subpage-back" onclick="closeSubpage('services')">← Back</button>
+    <div class="subpage-hero">
+      <h1>Construction</h1>
+      <p>Design / Build — From the Ground Up.</p>
+    </div>
+
+    <div class="cproj-category">
+      <h2 class="cproj-category-title">Single Family Home Development</h2>
+      <div class="cproj-row">
+      <div class="cproj-card" onclick="showProjectSubpage('monument')">
+        <div class="cproj-photo" id="cproj-photo-monument">
+          <img src="images/04ef4f7299f0.webp" alt="1226 Monument Street" loading="lazy">
+        </div>
+        <div class="cproj-info">
+          <p class="cproj-street">1226 Monument Street</p>
+          <p class="cproj-city">Pacific Palisades</p>
+          <button class="cproj-view" onclick="showProjectSubpage('monument')">View Project →</button>
+        </div>
+      </div>
+      <div class="cproj-card" onclick="showProjectSubpage('albright')">
+        <div class="cproj-photo" id="cproj-photo-albright">
+          <img src="images/e81c4a72c224.webp" alt="Albright Residence" loading="lazy">
+        </div>
+        <div class="cproj-info">
+          <p class="cproj-street">Albright Residence</p>
+          <p class="cproj-city">Pacific Palisades</p>
+          <button class="cproj-view" onclick="showProjectSubpage('albright')">View Project →</button>
+        </div>
+      </div>
+      <div class="cproj-card" onclick="showProjectSubpage('livorno')">
+        <div class="cproj-photo" id="cproj-photo-livorno">
+          <img src="images/3b9e4a13b89c.webp" alt="16861 Livorno Drive" loading="lazy">
+        </div>
+        <div class="cproj-info">
+          <p class="cproj-street">16861 Livorno Drive</p>
+          <p class="cproj-city">Pacific Palisades</p>
+          <button class="cproj-view" onclick="showProjectSubpage('livorno')">View Project →</button>
+        </div>
+      </div>
+      <div class="cproj-card" onclick="showProjectSubpage('greencraig')">
+        <div class="cproj-photo" id="cproj-photo-greencraig">
+          <img style="object-position:top;" src="images/b6dec268ed13.webp" alt="562 Greencraig Road" / loading="lazy">
+        </div>
+        <div class="cproj-info">
+          <p class="cproj-street">562 Greencraig Road</p>
+          <p class="cproj-city">Brentwood</p>
+          <button class="cproj-view" onclick="showProjectSubpage('greencraig')">View Project →</button>
+        </div>
+      </div>
+      <div class="cproj-card" onclick="showProjectSubpage('kagawa')">
+        <div class="cproj-photo" id="cproj-photo-kagawa">
+          <div class="cproj-placeholder"><span>Photos Coming Soon</span></div>
+        </div>
+        <div class="cproj-info">
+          <p class="cproj-street">1027 Kagawa Street</p>
+          <p class="cproj-city">Pacific Palisades</p>
+          <button class="cproj-view" onclick="showProjectSubpage('kagawa')">View Project →</button>
+        </div>
+      </div>
+      <div class="cproj-card" onclick="showProjectSubpage('kraft')">
+        <div class="cproj-photo" id="cproj-photo-kraft">
+          <img src="images/a5f78aa8898b.webp" alt="4201 Kraft Avenue" loading="lazy">
+        </div>
+        <div class="cproj-info">
+          <p class="cproj-street">4201 Kraft Avenue</p>
+          <p class="cproj-city">Colfax Meadows</p>
+          <button class="cproj-view" onclick="showProjectSubpage('kraft')">View Project →</button>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="cproj-category">
+      <h2 class="cproj-category-title">Multi-Family Development</h2>
+      <div class="cproj-row">
+      <div class="cproj-card" onclick="showProjectSubpage('huston')">
+        <div class="cproj-photo" id="cproj-photo-huston">
+          <div class="cproj-placeholder"><span>Photos Coming Soon</span></div>
+        </div>
+        <div class="cproj-info">
+          <p class="cproj-street">11155 Huston Street</p>
+          <p class="cproj-city">North Hollywood</p>
+          <button class="cproj-view" onclick="showProjectSubpage('huston')">View Project →</button>
+        </div>
+      </div>
+      <div class="cproj-card" onclick="showProjectSubpage('blix')">
+        <div class="cproj-photo" id="cproj-photo-blix">
+          <img src="images/32abcf98cce4.webp" alt="10806 Blix Street, Toluca Lake" / loading="lazy">
+        </div>
+        <div class="cproj-info">
+          <p class="cproj-street">10806 Blix Street</p>
+          <p class="cproj-city">Toluca Lake</p>
+          <button class="cproj-view" onclick="showProjectSubpage('blix')">View Project →</button>
+        </div>
+      </div>
+      <div class="cproj-card" onclick="showProjectSubpage('riverside')">
+        <div class="cproj-photo" id="cproj-photo-riverside">
+          <img src="images/b90aee06ad88.webp" alt="13136 Riverside Drive, Sherman Oaks" / loading="lazy">
+        </div>
+        <div class="cproj-info">
+          <p class="cproj-street">13136 Riverside Drive</p>
+          <p class="cproj-city">Sherman Oaks</p>
+          <button class="cproj-view" onclick="showProjectSubpage('riverside')">View Project →</button>
+        </div>
+      </div>
+      <div class="cproj-card" onclick="showProjectSubpage('klump')">
+        <div class="cproj-photo" id="cproj-photo-klump">
+          <img src="images/294314d57b13.webp" alt="5115 Klump Street, North Hollywood" / loading="lazy">
+        </div>
+        <div class="cproj-info">
+          <p class="cproj-street">5115 Klump Street</p>
+          <p class="cproj-city">North Hollywood</p>
+          <button class="cproj-view" onclick="showProjectSubpage('klump')">View Project →</button>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    
+
+    
+  </section>
+</body>
+</html>
